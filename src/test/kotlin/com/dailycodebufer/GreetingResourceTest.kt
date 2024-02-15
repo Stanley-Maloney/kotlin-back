@@ -5,6 +5,10 @@ import io.restassured.RestAssured.given
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.jupiter.api.Test
 
+@Produces (MediaType.TEXT_PLAIN)
+fun hello(): String {
+    return "Hello from RESTEasy Reactive"
+}
 @QuarkusTest
 class GreetingResourceTest {
 
@@ -17,4 +21,4 @@ class GreetingResourceTest {
              .body(`is`("Hello from RESTEasy Reactive"))
     }
 
-}
+}-
